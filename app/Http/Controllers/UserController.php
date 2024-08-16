@@ -10,15 +10,25 @@ class UserController extends Controller
 {
     public function index()
     {
-        $data=
-        [
-            'username'=>'Faizah',
-            'nama'=>'faizah',
-            'password'=>Hash::make('12345'),
-            'user_id'=>4,
-            'level_id'=>1
-        ];
-        UserModel::insert($data);
+        //menambahkan data menggunakan ORM
+        // $data=
+        // [
+        //     'username'=>'Faizah',
+        //     'nama'=>'faizah',
+        //     'password'=>Hash::make('12345'),
+        //     'user_id'=>4,
+        //     'level_id'=>1
+        // ];
+        // UserModel::insert($data);
+
+        //update
+        // $data=[
+        //     'nama'=>'faiz',
+        // ];
+        // UserModel::where('username','faizah')->update($data);
+
+        //hapus data
+        UserModel::where('username','Faizah')->delete();
         
         //coba akses model UserModel
         $user = UserModel::all(); //ambil semua data dari tabel m_user
