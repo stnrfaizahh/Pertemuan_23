@@ -10,10 +10,14 @@
         <h1> data level pengguna</h1>
         <table border="1" cellpadding="2" cellspacing="0">
             <tr>
-                <th> ID</th>
-                <th> username</th>
-                <th> nama </th>
-                <th> ID Level Pengguna</th>
+                <td> ID</td>
+                <td> username</td>
+                <td> nama </td>
+                <td> ID Level Pengguna</td>
+                <td>Kode Level</td>
+                <td>nama Level</td>
+                <td>Aksi</td>
+
             </tr>
 
             @foreach ($data as $d)
@@ -22,6 +26,8 @@
                 <td>{{ $d->username}}</td>
                 <td>{{ $d->nama}}</td>
                 <td>{{ $d->level_id}}</td>
+                <td>{{ $d->level->level_kode}}</td>
+                <td>{{ $d->level->level_nama}}</td>
             </tr>
                 
             @endforeach

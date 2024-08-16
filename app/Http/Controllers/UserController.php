@@ -31,7 +31,7 @@ class UserController extends Controller
         UserModel::where('username','Faizah')->delete();
         
         //coba akses model UserModel
-        $user = UserModel::all(); //ambil semua data dari tabel m_user
+        $user = UserModel::with('level')->get(); //ambil semua data dari tabel m_user
         return view('user', ['data'=> $user]);
     }
 }
